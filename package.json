@@ -1,0 +1,22 @@
+{
+  "name": "bits_assessment",
+  "version": "1.0.0",
+  "description": "This project contains Order Management System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmkarTidke8080/Backend_Assesment_Omkar.git"
+  },
+  "author": "Omkar Tidke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OmkarTidke8080/Backend_Assesment_Omkar/issues"
+  },
+  "homepage": "https://github.com/OmkarTidke8080/Backend_Assesment_Omkar#readme",
+  "dependencies": {
+    "install": "^0.13.0"
+  }
+}
