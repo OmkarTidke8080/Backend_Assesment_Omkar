@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "This project contains Order Management System",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,9 @@
   },
   "homepage": "https://github.com/OmkarTidke8080/Backend_Assesment_Omkar#readme",
   "dependencies": {
-    "install": "^0.13.0"
+    "bits_assessment": "file:",
+    "express": "^4.21.2",
+    "install": "^0.13.0",
+    "nodemon": "^3.1.9"
   }
 }
