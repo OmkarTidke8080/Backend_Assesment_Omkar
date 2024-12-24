@@ -1,41 +1,36 @@
+import { validationResult } from "express-validator";
+
 let orders = [];
 
-// Create  Order
+// Create Order
 export const order = (req, res) => {
-  const { products } = req.body;
 
-  if (!products || !Array.isArray(products) || products.length === 0) {
-    return res
-      .status(400)
-      .json({ error: "Products are required and must be an array" });
+  // validation check
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
   }
+
+  const { products } = req.body;
 
   let totalAmount = 0;
   let discount = 0;
 
   products.forEach((product) => {
-    if (!product.product_Name || !product.quantity || !product.price) {
-      return res.status(400).json({
-        error: "Each product must have a product_Name, quantity, and price",
-      });
-    }
-
     totalAmount += product.quantity * product.price;
   });
 
-  // discount based on price exceeding 10000
+  // Discount Rules
   if (totalAmount > 10000) {
     discount += totalAmount * 0.1;
   }
-
-  // discount based on more than 5 items
   if (products.length > 5) {
     discount += 500;
   }
 
   const finalAmount = totalAmount - discount;
 
-  // Create an order object
+  // Create and Save Order
   const order = {
     id: orders.length + 1,
     products,
@@ -46,6 +41,7 @@ export const order = (req, res) => {
 
   orders.push(order);
 
+  // send order summary in response
   res.status(201).json(order);
 };
 

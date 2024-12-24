@@ -21,6 +21,7 @@
   "dependencies": {
     "bits_assessment": "file:",
     "express": "^4.21.2",
+    "express-validator": "^7.2.0",
     "install": "^0.13.0",
     "nodemon": "^3.1.9"
   }
