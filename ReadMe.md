@@ -13,11 +13,11 @@ Additionally, the API applies dynamic discounts based on order amount and quanti
 - **10% discount** if the order amount exceeds ₹10,000.
 - **₹500 flat discount** if the order contains more than 5 items.
 
-The data is stored in-memory, with no persistent database used.
+The data is stored in-memory, with no  database used.
 
 ## Core Features:
 
-1. **Place an Order**: Accepts order details (product name, quantity, price per unit) and generates a unique order ID with a timestamp.
+1. **Place an Order**: Accepts order details (product name, quantity, price ) and generates a unique order ID.
 2. **Get Order Summary**: Retrieves the details of an order using its unique ID.
 3. **Calculate Total Revenue**: Calculates and returns the total revenue from all orders.
 
@@ -40,3 +40,18 @@ The data is stored in-memory, with no persistent database used.
    git clone <repository-url>
    cd <repository-directory>
    ```
+
+## File Structure
+
+├── src/
+│   ├-─ controllers/
+│   │   └── orderController.js
+│   ├── models/
+│   │   └── orderModel.js
+│   ├── routes/
+│   │   └── orderRoutes.js
+│   ├── server.js
+
+├── package.json
+├── README.md
+└── .gitignore
