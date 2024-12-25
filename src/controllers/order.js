@@ -45,6 +45,21 @@ export const order = (req, res) => {
   res.status(201).json(order);
 };
 
+
+// get single order (search using order_id)
+export const getSingleOrderSummary = (req, res) => {
+  const { order_id } = req.params;
+
+  const order = orders.find((order) => order.id == order_id);
+
+  if (order) {
+    res.status(200).json(order);
+  } else {
+    res.status(404).json({ error: "Order not found" });
+  }
+};
+
+
 // Get All Orders
 export const getAllOrders = (req, res) => {
   if (orders.length > 0) {
